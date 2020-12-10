@@ -111,3 +111,60 @@ export default sanityClient({
 
 - Find `projectId` in folder `sanity/sanity.json`
 - Go manage.sanity.io, in `settings` tab, add CORS Origins `http://localhost:3000`
+
+### Install React Router
+
+First create folder `src/components`, then **cd** this directory.
+
+```bash
+mkdir src/components && cd src/components
+```
+
+Create 6 components below:
+
+```bash
+touch About.js Home.js NavBar.js Post.js Project.js SinglePost.js
+```
+
+Copy this code to `About.js`, `Home.js`:
+
+```js
+import React from "react";
+
+export default function About() {
+  return <h1>About Page!</h1>;
+}
+```
+
+Install React Router
+
+```bash
+npm install react-router-dom
+```
+
+Replace code on file `src/App.js`, with this code:
+
+```js
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+import SinglePost from "./components/SinglePost";
+import Post from "./components/Post";
+import Project from "./components/Project";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route component={Home} path="/" exact />
+        <Route component={About} path="/about" />
+        <Route component={SinglePost} path="/post/:slug" />
+        <Route component={Post} path="/post" />
+        <Route component={Project} path="/project" />
+      </Switch>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+```
