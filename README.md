@@ -126,7 +126,7 @@ Create 6 components below:
 touch About.js Home.js NavBar.js Post.js Project.js SinglePost.js
 ```
 
-Copy this code to `About.js`, `Home.js`:
+Copy this code to `About.js`, `Home.js`, `Post.js`, `Project.js`:
 
 ```js
 import React from "react";
@@ -175,10 +175,12 @@ import About from "./components/About";
 import SinglePost from "./components/SinglePost";
 import Post from "./components/Post";
 import Project from "./components/Project";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <BrowserRouter>
+    <NavBar />
       <Switch>
         <Route component={Home} path="/" exact />
         <Route component={About} path="/about" />
