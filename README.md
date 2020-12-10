@@ -1,4 +1,4 @@
-# Getting started sanity.io with React
+# Getting started Sanity with React
 
 ### Install React, Tailwindcss
 
@@ -48,8 +48,8 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require('@tailwindcss/typography')],
-}
+  plugins: [require("@tailwindcss/typography")],
+};
 ```
 
 Error, follow this step:
@@ -101,12 +101,12 @@ npm install @sanity/client
 Create a file `src/client.js`, then paste this code:
 
 ```js
-import sanityClient from '@sanity/client'
+import sanityClient from "@sanity/client";
 
 export default sanityClient({
-	projectId: "",
-    dataset: "production"
-})
+  projectId: "",
+  dataset: "production",
+});
 ```
 
 - Find `projectId` in folder `sanity/sanity.json`
